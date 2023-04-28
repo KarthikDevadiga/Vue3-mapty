@@ -13,24 +13,28 @@
           href="#"
           class="nav-link__link"
           @click.prevent="current_intrest = 'Profile'"
+          :class="{'link-on-select' : current_intrest === 'Profile'}"
           >Profile</a
         >
         <a
           href="#"
           class="nav-link__link"
           @click.prevent="current_intrest = 'Reporting'"
+          :class="{'link-on-select' : current_intrest === 'Reporting'}"
           >Reporting</a
         >
         <a
           href="#"
           class="nav-link__link"
           @click.prevent="current_intrest = 'Role'"
+          :class="{'link-on-select' : current_intrest === 'Role'}"
           >Role</a
         >
         <a
           href="#"
           class="nav-link__link"
           @click.prevent="current_intrest = 'Performance'"
+          :class="{'link-on-select' : current_intrest === 'Performance'}"
           >Performance</a
         >
       </div>
@@ -58,7 +62,7 @@
     <div
       v-show="showChat"
       class="chat-window"
-      :class="{ growing: isAnimation, shrinking: isAnimation }"
+      :class="{ growing: isAnimation, 'shrinking': isAnimation }"
     >
       <div v-show="showChat" class="chat" @click="showChat = !showChat">
         <div class="chat__chating-div">Lo chat</div>

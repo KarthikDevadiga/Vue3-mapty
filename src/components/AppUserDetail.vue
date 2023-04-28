@@ -31,6 +31,7 @@
         </div>
         <!-- </div> -->
       </div>
+      <div class="margin-user"></div>
       <div class="key-value">
         <p class="key-value__sub">Company</p>
         <div class="comp-det">
@@ -55,30 +56,33 @@
     </div>
 
     <div class="location">
-      <div class="location__details">
-        <p class="address-sub">Address <span class="semi-adress">:</span></p>
-        <div class="location-description">
+      <div class="user-address">
+      <div class="key-value">
+        <p class="key-value__sub">Address</p>
+        <div class="comp-det">
           <!-- <div class="profile-description__key"> -->
-          <p class="profile-description__key-p">
+          <p class="key-value__key-p">
             Street <span class="semi">:</span>
           </p>
-          <h3 class="profile-description__value-p">
+          <h3 class="key-value__value-p">
             {{ user.address.street }}
           </h3>
 
-          <p class="profile-description__key-p">
+          <p class="key-value__key-p">
             suite <span class="semi">:</span>
           </p>
-          <h3 class="profile-description__value-p">{{ user.address.suite }}</h3>
+          <h3 class="key-value__value-p">{{ user.address.suite }}</h3>
 
-          <p class="profile-description__key-p">
+          <p class="key-value__key-p">
             ZipCode <span class="semi">:</span>
           </p>
-          <h3 class="profile-description__value-p">
+          <h3 class="key-value__value-p">
             {{ user.address.zipcode }}
           </h3>
         </div>
       </div>
+      </div>
+      
       <div id="map"></div>
     </div>
 
