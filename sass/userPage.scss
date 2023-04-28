@@ -4,22 +4,25 @@
     border-radius: 20px;
     position: relative;
     margin: 3rem;
+    
     // width: 90%;
     display: grid;
     grid-template-rows: 3vw 15vw 14vw 6vw 6vw;
     grid-template-columns:
       [sidebar-start] 8rem [sidebar-end full-start]
-      minmax(4rem, 1fr) [center-start]
+      minmax(10rem, 1fr) [center-start]
       repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
       [center-end] minmax(4rem, 1fr) [full-end];
     gap: 2rem;
   }
   
+  // side bar for user info page
   .sidebar {
     background-image:linear-gradient(to right, #76c2f2, #398fea);
-    // background-image:linear-gradient(to right, #ffffff, #abaeb1);
-  
-    grid-column: sidebar-start/col-start 2;
+     
+    // grid-column: sidebar-start/col-start 2;
+    grid-column: sidebar-start/center-start;
+
     grid-row: 1/-1;
   
     border-radius: 40px;
@@ -43,15 +46,18 @@
       border-bottom: 1px solid #333;
     }
   }
+  //profile heading along with sub profile
   .profile-name {
     // background-color: yellowgreen;
-    grid-column: col-start 2/-1;
+    grid-column: center-start /-1;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .main-content-user {
-    grid-column: col-start 2/7;
+    // background-color: yellowgreen; //col-start 2
+
+    grid-column: center-start/7;
     grid-row: 2/-1;
     display: flex;
     flex-flow: column;
@@ -85,7 +91,7 @@
   }
   
   .profile-description {
-    // background-color: rgb(255, 0, 187);
+    background-color: rgb(255, 0, 187); // user description
     grid-column: col-start 2 / col-start 4;
     grid-row: 3/4;
     display: grid;
@@ -94,6 +100,7 @@
     align-items: center;
   
     &__key-p {
+      background-color:green;
       display: flex;
       justify-content: space-between;
     }

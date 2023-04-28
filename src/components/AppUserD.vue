@@ -83,7 +83,7 @@ export default {
       user: {},
       showChat: false,
       isAnimation: false,
-      current_intrest: 'data',
+      current_intrest: 'Profile',
     };
   },
   components: {
