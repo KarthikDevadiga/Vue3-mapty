@@ -91,18 +91,35 @@
   }
   
   .profile-description {
-    background-color: rgb(255, 0, 187); // user description
+    // background-color: rgb(255, 0, 187); // user description
     grid-column: col-start 2 / col-start 4;
     grid-row: 3/4;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(4, 1fr);
-    align-items: center;
   
     &__key-p {
-      background-color:green;
+      // background-color:green;
+      align-items:center;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+    // align-items: center;
+    // align-items: center;
+
+      position:relative;
+    }
+    &__semi{
+      background-color:#fff;
+      margin-right:1rem;
+      margin-left:1rem;
+
+    }
+    &__key-content{
+      // background-color:red;
+      // position:absolute;
+      // right:55%;
+      // margin-right:-1px
+      align-self:center;
     }
   }
   

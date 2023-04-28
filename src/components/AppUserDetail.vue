@@ -7,23 +7,28 @@
       <div class="profile-description">
         <!-- <div class="profile-description__key"> -->
         <p class="profile-description__key-p">
-        
-          Username <span class="semi">:</span>
+        <div class="profile-description__key-content">Username</div>
+
+           <div  class="profile-description__semi">:</div >
         </p>
         <h3 class="profile-description__value-p">{{ user.username }}</h3>
 
         <p class="profile-description__key-p">
-          e-mail <span class="semi">:</span>
+        <div class="profile-description__key-content">e-mai</div>
+
+           <div  class="profile-description__semi">:</div >
         </p>
         <h3 class="profile-description__value-p">{{ user.email }}</h3>
 
         <p class="profile-description__key-p">
-          Phone <span class="semi">:</span>
+        <div class="profile-description__key-content">Phone</div>
+           <div class="profile-description__semi">:</div >
         </p>
         <h3 class="profile-description__value-p">{{ user.phone }}</h3>
 
         <p class="profile-description__key-p">
-          Website <span class="semi">:</span>
+        <div class="profile-description__key-content">Website</div>
+           <div  class="profile-description__semi">:</div >
         </p>
         <!-- </div> -->
         <!-- <div class="profile-description__value"> -->
