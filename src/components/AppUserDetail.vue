@@ -4,56 +4,52 @@
         <img class="profile-pic__img" :src="user.profilepicture" alt="hehe" />
         <h3>{{ user.name }}</h3>
       </div>
-      <div class="profile-description">
-        <!-- <div class="profile-description__key"> -->
-        <p class="profile-description__key-p">
-        <div class="profile-description__key-content">Username</div>
+      <div class="key-value">
+      
+        <div class="comp-det">
+          <p class="key-value__key-p">
+            Username <span class="semi">:</span>
+          </p>
+          <h3 class="key-value__value-p">{{ user.username }}</h3>
 
-           <div  class="profile-description__semi">:</div >
-        </p>
-        <h3 class="profile-description__value-p">{{ user.username }}</h3>
+          <p class="key-value__key-p">
+            e-mail <span class="semi">:</span>
+          </p>
+          <h3 class="key-value__value-p">
+            {{  user.email  }}
+          </h3>
 
-        <p class="profile-description__key-p">
-        <div class="profile-description__key-content">e-mai</div>
+          <p class="key-value__key-p">
+            Phone <span class="semi">:</span>
+          </p>
+          <h3 class="key-value__value-p">{{ user.phone }}</h3>
 
-           <div  class="profile-description__semi">:</div >
-        </p>
-        <h3 class="profile-description__value-p">{{ user.email }}</h3>
-
-        <p class="profile-description__key-p">
-        <div class="profile-description__key-content">Phone</div>
-           <div class="profile-description__semi">:</div >
-        </p>
-        <h3 class="profile-description__value-p">{{ user.phone }}</h3>
-
-        <p class="profile-description__key-p">
-        <div class="profile-description__key-content">Website</div>
-           <div  class="profile-description__semi">:</div >
-        </p>
-        <!-- </div> -->
-        <!-- <div class="profile-description__value"> -->
-        <h3 class="profile-description__value-p">{{ user.Website }}</h3>
+          <p class="key-value__key-p">
+            website <span class="semi">:</span>
+          </p>
+          <h3 class="key-value__value-p">{{ user.Website }}</h3>
+        </div>
         <!-- </div> -->
       </div>
-      <div class="company-description">
-        <p class="company-description__sub">Company</p>
+      <div class="key-value">
+        <p class="key-value__sub">Company</p>
         <div class="comp-det">
-          <p class="company-description__key-p">
+          <p class="key-value__key-p">
             Name <span class="semi">:</span>
           </p>
-          <h3 class="company-description__value-p">{{ user.company.name }}</h3>
+          <h3 class="key-value__value-p">{{ user.company.name }}</h3>
 
-          <p class="company-description__key-p">
+          <p class="key-value__key-p">
             catchPhrase <span class="semi">:</span>
           </p>
-          <h3 class="company-description__value-p">
+          <h3 class="key-value__value-p">
             {{ user.company.catchPhrase }}
           </h3>
 
-          <p class="company-description__key-p">
+          <p class="key-value__key-p">
             Phone <span class="semi">:</span>
           </p>
-          <h3 class="company-description__value-p">{{ user.phone }}</h3>
+          <h3 class="key-value__value-p">{{ user.phone }}</h3>
         </div>
       </div>
     </div>
