@@ -1,14 +1,14 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import router from './router/indexRouter';
+import App from './App.vue';
+import 'leaflet/dist/leaflet.css';
+import veeValidate from '../src/includes/veeValidate';
 
-import App from './App.vue'
-import router from './router'
+const app = createApp(App);
+app.use(createPinia()); //registering Pinia plugin
+app.use(router);
+app.use(veeValidate);
 
-import './assets/main.css'
-
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+console.log(App);
+app.mount('#app');
