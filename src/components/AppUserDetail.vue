@@ -7,6 +7,7 @@
       <div class="profile-description">
         <!-- <div class="profile-description__key"> -->
         <p class="profile-description__key-p">
+        
           Username <span class="semi">:</span>
         </p>
         <h3 class="profile-description__value-p">{{ user.username }}</h3>
