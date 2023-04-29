@@ -54,7 +54,7 @@
     <template v-if="current_intrest != 'Profile'">
       <AppUM></AppUM>
     </template>
-    <div v-show="!showChat" class="chat" @click="showChat = !showChat">
+    <!-- <div v-show="!showChat" class="chat" @click="showChat = !showChat">
       <div class="chat__chating-div">Lo chat</div>
       <div class="chat__icon-u">LO</div>
     </div>
@@ -67,6 +67,21 @@
       <div v-show="showChat" class="chat" @click="showChat = !showChat">
         <div class="chat__chating-div">Lo chat</div>
         <div class="chat__icon-u">LO</div>
+      </div> -->
+    <!-- </div> -->
+    <div class="chat" :class="{ active: chatActive }" @click="toggleChat">
+    Click here to chat
+    <div class="chat__icon-u" ></div>
+    <div class="chat__chating-div">
+      <!-- your chat content here -->
+    </div>
+      <div class="chat-window" :class="{ growing: chatActive, shrinking: !chatActive }">
+      <!-- your chat window content here -->
+      <div>
+      <div>click here to close</div>
+      <div class="closing-icon"></div>
+
+      </div>
       </div>
     </div>
   </div>
@@ -88,6 +103,7 @@ export default {
       showChat: false,
       isAnimation: false,
       current_intrest: 'Profile',
+      chatActive: false,
     };
   },
   components: {
@@ -102,6 +118,9 @@ export default {
       const user = this.current_user;
       return this.users[user - 1];
     },
+    toggleChat() {
+      this.chatActive = !this.chatActive;
+    }
   },
   beforeMount() {
     // console.log(this.f);
