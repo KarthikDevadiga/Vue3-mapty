@@ -267,17 +267,22 @@
     z-index: 1000;
   }
   
-  .chat__chating-div {
-    display: inline-block;
+  .chating-div {
+    background-color:#333;
+    display: none;
     position: absolute;
-    bottom: 0;
+    bottom: calc(3rem + 1px);
     right: -1rem;
+    right:28rem; // chat-window-width + chat-window-right + 3 = 28
+    height:0;
+    width: 20rem;
+
   }
   
   .chat-window {
     border-radius: 20px;
     position: fixed;
-    background-color: #333;
+    background-color: $color-grey-light-1;
     height: 0;
     width: 20rem;
     bottom: calc(3rem + 1px);
@@ -289,10 +294,34 @@
     grid-column:-1 /-2;
     grid-row:-1/-2;
     // display:none;
+    overflow:scroll;
+ 
+
+    &__img{
+      height: 3.9rem;
+      border-radius: 50px;
+      display: block;
+      margin-right: 1rem;
+    }
+
+    &__profile{
+      display:flex;
+      align-items:center;
+      margin:0.5rem;
+    cursor: pointer;
+
+      // flex-direction:coloumn;
+    }
   }
   
   .chat.active .chat-window {
     height: 30rem;
+  }
+
+  .chating-div-display{
+    height: 30rem;
+    display: inline-block;
+
   }
   
   .growing {

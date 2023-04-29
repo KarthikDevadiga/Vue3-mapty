@@ -69,20 +69,23 @@
         <div class="chat__icon-u">LO</div>
       </div> -->
     <!-- </div> -->
-    <div class="chat" :class="{ active: chatActive }" @click="toggleChat">
+    <div class="chat" :class="{ active: chatActive }" @click="toggleChat($event)">
     Click here to chat
     <div class="chat__icon-u" ></div>
-    <div class="chat__chating-div">
-      <!-- your chat content here -->
-    </div>
+    
       <div class="chat-window" :class="{ growing: chatActive, shrinking: !chatActive }">
-      <!-- your chat window content here -->
-      <div>
-      <div>click here to close</div>
-      <div class="closing-icon"></div>
-
+        <div>click here to close</div>
+        <div v-for="user in users" :key="user" class="chat-window__profile" @click.prevent="chatWithser(user)">
+          <img class="chat-window__img" :src="user.profilepicture" alt="hehe" />
+          <p class="chat-window__name">{{ user.name }}</p>
+        </div>
+        <div>
+          <div class="closing-icon"></div>
+        </div>
       </div>
-      </div>
+    </div>
+    <div class="chating-div" :class="{ 'chating-div-display': chatingActive }">
+      your chat content here
     </div>
   </div>
 </template>
@@ -104,6 +107,8 @@ export default {
       isAnimation: false,
       current_intrest: 'Profile',
       chatActive: false,
+      chatingActive: false,
+
     };
   },
   components: {
@@ -118,8 +123,26 @@ export default {
       const user = this.current_user;
       return this.users[user - 1];
     },
-    toggleChat() {
-      this.chatActive = !this.chatActive;
+    toggleChat(event) {
+      console.log(event);
+      const target = event.target;
+      console.log(target);
+      if (!target.parentNode.classList.contains('chat-window__profile')) {
+        // Perform the action only if the class is not present
+        // Do something here...
+        this.chatActive = !this.chatActive;
+        if(this.chatingActive){
+          this.chatingActive = false;
+        }
+      }
+      
+      // this.chatingActive = !this.chatingActive
+      
+      
+    },
+    chatWithser(user){
+      console.log(user);
+      this.chatingActive = !this.chatingActive;
     }
   },
   beforeMount() {
