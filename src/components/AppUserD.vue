@@ -75,9 +75,9 @@
     
       <div class="chat-window" :class="{ growing: chatActive, shrinking: !chatActive }">
         <div>click here to close</div>
-        <div v-for="user in users" :key="user" class="chat-window__profile" @click.prevent="chatWithser(user)">
-          <img class="chat-window__img" :src="user.profilepicture" alt="hehe" />
-          <p class="chat-window__name">{{ user.name }}</p>
+        <div v-for="Cuser in users" :key="user" v-show="Cuser.name != user.name" class="chat-window__profile" @click.prevent="chatWithser(Cuser)">
+          <img class="chat-window__img" :src="Cuser.profilepicture" alt="hehe" />
+          <p class="chat-window__name">{{ Cuser.name }}</p>
         </div>
         <div>
           <div class="closing-icon"></div>
@@ -85,7 +85,10 @@
       </div>
     </div>
     <div class="chating-div" :class="{ 'chating-div-display': chatingActive }">
-      your chat content here
+      <div  class="chat-window__profile chating-profile" >
+          <img class="chat-window__img" :src="currentChatingUser.profilepicture" alt="hehe" />
+          <p class="chat-window__name">{{ currentChatingUser.name }}</p>
+        </div>
     </div>
   </div>
 </template>
@@ -108,7 +111,7 @@ export default {
       current_intrest: 'Profile',
       chatActive: false,
       chatingActive: false,
-
+      currentChatingUser:'',
     };
   },
   components: {
@@ -141,8 +144,11 @@ export default {
       
     },
     chatWithser(user){
-      console.log(user);
-      this.chatingActive = !this.chatingActive;
+      this.currentChatingUser = user
+      // this.chatingActive = !this.chatingActive;
+      if(!this.chatingActive){
+        this.chatingActive = true;
+      }
     }
   },
   beforeMount() {

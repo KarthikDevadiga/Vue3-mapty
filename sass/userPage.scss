@@ -268,15 +268,18 @@
   }
   
   .chating-div {
-    background-color:#333;
+    background-color:$color-grey-light-3;
     display: none;
     position: absolute;
     bottom: calc(3rem + 1px);
     right: -1rem;
     right:28rem; // chat-window-width + chat-window-right + 3 = 28
-    height:0;
+    // height:0;
     width: 20rem;
-
+    height: 20rem;
+    z-index:3000;
+    border-radius:10px;
+    border:1px solid #c8c3c0;
   }
   
   .chat-window {
@@ -319,7 +322,6 @@
   }
 
   .chating-div-display{
-    height: 30rem;
     display: inline-block;
 
   }
